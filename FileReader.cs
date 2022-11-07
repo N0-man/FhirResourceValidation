@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace fhir_cs_profiling_basic
+namespace FhirResourceValidation
 {
     public static class FileReader
     {

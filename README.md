@@ -6,8 +6,17 @@ Options
 
 1. StructureDefinition 
    [FHIR profiles](https://www.hl7.org/fhir/validation.html)
+> `Program → ValidateUsingFhirProfile()` validates Goals in `Data/careplan.json` using StructureDefination in `Profiles` Directory
 2. Typed validation rules using
    [FluentValidation](https://docs.fluentvalidation.net/en/latest/)
+> `Program → ValidateUsingFluentValidation()` function initiate `GoalValidator` which then internally validate measures using `MeasureValidators`
+
+### Build and Run
+
+```shell
+dotnet restore
+dotnet run
+```
 
 #### Note
 

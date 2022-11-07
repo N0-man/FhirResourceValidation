@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using fhir_cs_profiling_basic;
 using FhirResourceValidation.Validation;
 using FluentValidation;
 using Hl7.Fhir.Model;
