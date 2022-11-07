@@ -1,0 +1,95 @@
+{
+  "resourceType": "CarePlan",
+  "title": "My Health Plan for 2023",
+  "meta": {
+    "profile": ["http://nemo.sg/fhir/StructureDefinition/Goal"]
+  },
+  "status": "active",
+  "contained": [
+    {
+      "resourceType": "Patient",
+      "id": "somePatient",
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      \n      <p>Patient Simon Notsowell @ Acme Healthcare, Inc. MR = 123457, DECEASED</p>\n    \n    </div>"
+      },
+      "active": true,
+      "name": [
+        {
+          "use": "official",
+          "family": "Notsowell",
+          "given": ["Simon"]
+        }
+      ],
+      "gender": "male",
+      "birthDate": "1982-01-23",
+      "deceasedDateTime": "2015-02-14T13:42:00+10:00",
+      "managingOrganization": {
+        "reference": "Organization/1",
+        "display": "ACME Healthcare, Inc"
+      }
+    },
+    {
+      "resourceType": "Goal",
+      "id": "G1-f873f0480edf4e7da98c01be4c05ad90",
+      "lifecycleStatus": "active",
+      "subject": {"reference": "Patient/example", "display": "Amy Shaw"},
+      "description": {
+        "coding": [
+          {
+            "system": "http://nemo.sg/ValueSet/hsg-description",
+            "code": "Description",
+            "display": "Description"
+          }
+        ]
+      },
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://nemo.sg/ValueSet/hsg-health-goal",
+              "code": "G1",
+              "display": "BMI Goal"
+            }
+          ]
+        }
+      ],
+      "target": [
+        {
+          "measure": {
+            "coding": [
+              {
+                "system": "http://nemo.sg/ValueSet/hsg-goal-measure",
+                "code": "GM001",
+                "display": "Weight"
+              }
+            ]
+          },
+          "detailQuantity": {
+            "value": 65.8,
+            "comparator": "<=",
+            "system": "http://nemo.sg/ValueSet/hsg-ucum",
+            "code": "kg"
+          },
+          "dueDuration": {
+            "value": 3,
+            "system": "http://domain.sg/ValueSet/hsg-ucum",
+            "code": "mo"
+          }
+        },
+        {
+          "measure": {
+            "coding": [
+              {
+                "system": "http://nemo.sg/ValueSet/hsg-goal-measure",
+                "code": "GM002"
+              }
+            ]
+          },
+          "dueDate": "2023-05-30"
+        }
+      ]
+    }
+  ],
+  "goal": [{"reference": "#G1-f873f0480edf4e7da98c01be4c05ad90"}]
+}

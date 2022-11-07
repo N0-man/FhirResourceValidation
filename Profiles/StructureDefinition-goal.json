@@ -1,0 +1,44 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "nemo-goal",
+  "url": "http://nemo.sg/fhir/StructureDefinition/Goal",
+  "version": "v0",
+  "name": "Goal_Profile",
+  "status": "active",
+  "experimental": false,
+  "date": "2022-09-01",
+  "publisher": "nemo",
+  "description": "First attempt to profile the Goal resource",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Goal",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Goal",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Goal.category",
+        "path": "Goal.category",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Goal.category.coding",
+        "path": "Goal.category.coding",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Goal.subject",
+        "path": "Goal.subject",
+        "max": "0"
+      },
+      {
+        "id": "Goal.target",
+        "path": "Goal.target",
+        "max": "0"
+      }
+    ]
+  }
+}
